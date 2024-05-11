@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavtorTask", "NavtorTask\NavtorTask.csproj", "{541F0487-AA38-4461-B6B9-08465CE709A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavtorTask.Tests", "NavtorTask.Tests\NavtorTask.Tests.csproj", "{6E9B3AE7-B67A-4AF4-8878-63B55DE3CC94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{541F0487-AA38-4461-B6B9-08465CE709A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{541F0487-AA38-4461-B6B9-08465CE709A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{541F0487-AA38-4461-B6B9-08465CE709A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{541F0487-AA38-4461-B6B9-08465CE709A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E9B3AE7-B67A-4AF4-8878-63B55DE3CC94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E9B3AE7-B67A-4AF4-8878-63B55DE3CC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E9B3AE7-B67A-4AF4-8878-63B55DE3CC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E9B3AE7-B67A-4AF4-8878-63B55DE3CC94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
