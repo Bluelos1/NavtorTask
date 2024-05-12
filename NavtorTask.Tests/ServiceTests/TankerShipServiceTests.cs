@@ -10,13 +10,13 @@ public class TankerShipServiceTests
 {
     private readonly Mock<IShipService> _mockShipService;
     private readonly TankerShipService _tankerShipService;
+    private readonly TankerShip _tankerShip = new TankerShip { IMONumber = "IMO9014729", Length = 100, Width = 30,MaxLoadWeight = 100};
 
     public TankerShipServiceTests()
     {
         _mockShipService = new Mock<IShipService>();
         _tankerShipService = new TankerShipService(_mockShipService.Object);
     }
-    private readonly TankerShip _tankerShip = new TankerShip { IMONumber = "IMO9014729", Length = 100, Width = 30,MaxLoadWeight = 100};
 
     [Fact]
     public void RefuelTank_ValidShip_RefuelsTank()

@@ -12,7 +12,7 @@ public class Tank
     public double CapacityInLiters { get; set; }  
     public double CurrentLevelInLiters { get; set; } 
     
-    public bool CanRefuel(FuelType fuelType)
+    private bool CanRefuel(FuelType fuelType)
     {
         if (CurrentLevelInLiters == 0)
         {
@@ -23,7 +23,7 @@ public class Tank
     
     public double CalculateFuelWeight(double liters, FuelType fuelType)
     {
-        double density = fuelType == Enum.FuelType.Diesel ? 0.838 : 0.90;
+        var density = fuelType == Enum.FuelType.Diesel ? 0.838 : 0.90;
         return liters * density;
     }
 

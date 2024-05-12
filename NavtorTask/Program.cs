@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(x =>
 {
-    x.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+    x.SwaggerDoc("v1", new OpenApiInfo { Title = "Navtortask", Version = "v1" });
     x.UseInlineDefinitionsForEnums();
 });
 builder.Services.AddControllers().AddJsonOptions(options =>

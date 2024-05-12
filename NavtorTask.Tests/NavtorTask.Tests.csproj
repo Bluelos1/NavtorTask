@@ -25,9 +25,4 @@
       <ProjectReference Include="..\NavtorTask\NavtorTask.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="ControllerTests\" />
-      <Folder Include="ValidatorTests\" />
-    </ItemGroup>
-
 </Project>

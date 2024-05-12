@@ -9,17 +9,17 @@ namespace NavtorTask.Controller;
 [ApiController]
 public class ShipController : ControllerBase
 {
-    private readonly IShipService _ship;
+    private readonly IShipService _shipService;
 
-    public ShipController(IShipService shipService)
+    public ShipController(IShipService shipServiceService)
     {
-        _ship = shipService;
+        _shipService = shipServiceService;
     }
     
     [HttpGet]
     public IActionResult GetAllShips()
     {
-        var ships = _ship.GetAllShips();
+        var ships = _shipService.GetAllShips();
         return Ok(ships);
     }
 
@@ -28,7 +28,7 @@ public class ShipController : ControllerBase
     {
         try
         {
-            var ship = _ship.GetShipByIMONumber(imoNumber);
+            var ship = _shipService.GetShipByIMONumber(imoNumber);
             return Ok(ship);
         }
         catch (Exception ex)
@@ -52,7 +52,7 @@ public class ShipController : ControllerBase
                 MaxLoadWeight = containerShipDto.MaxLoadWeight,
                 Containers = new List<Container>()
             };
-            _ship.AddShip(newContainerShip);
+            _shipService.AddShip(newContainerShip);
             return CreatedAtAction(nameof(GetShipByImoNumber), new { imoNumber = containerShipDto.IMONumber }, containerShipDto);
         }
         catch (Exception ex)
@@ -90,7 +90,7 @@ public class ShipController : ControllerBase
             {
                 return BadRequest("Total fuel weight exceeds the ship's maximum load weight.");
             }
-            _ship.AddShip(newTankerShip);
+            _shipService.AddShip(newTankerShip);
             return CreatedAtAction(nameof(GetShipByImoNumber), new { imoNumber = tankerShipDto.IMONumber }, tankerShipDto);
         }
         catch (Exception ex)
@@ -104,7 +104,7 @@ public class ShipController : ControllerBase
     {
         try
         {
-            _ship.UpdatePosition(imoNumber, latitude, longitude);
+            _shipService.UpdatePosition(imoNumber, latitude, longitude);
             return NoContent();
         }
         catch (Exception ex)

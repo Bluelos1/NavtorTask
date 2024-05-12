@@ -9,17 +9,14 @@ public class ContainerShipServiceTests
 {
     private readonly Mock<IShipService> _mockShipService;
     private readonly ContainerShipService _containerShipService;
-
+    private readonly Container _container = new Container { ContainerId = 1, Weight = 100, };
+    private readonly ContainerShip _containerShip = new ContainerShip { IMONumber = "IMO9014729", Length = 100, Width = 30,MaxContainerCapacity = 1, MaxLoadWeight = 150};
     public ContainerShipServiceTests()
     {
         _mockShipService = new Mock<IShipService>();
         _containerShipService = new ContainerShipService(_mockShipService.Object);
     }
-
-    private  readonly Container _container = new Container { ContainerId = 1, Weight = 100, };
-    private readonly ContainerShip _containerShip = new ContainerShip { IMONumber = "IMO9014729", Length = 100, Width = 30,MaxContainerCapacity = 1, MaxLoadWeight = 150};
-
-
+    
     [Fact]
     public void LoadContainer_ValidShip_InvokesLoadContainer()
     {

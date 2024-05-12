@@ -21,7 +21,7 @@ public class ValidationService
     {
         if (latitude < -90 || latitude > 90 || longitude < -180 || longitude > 180)
         {
-            throw new ArgumentOutOfRangeException("Invalid coordinates provided.");
+            throw new ArgumentOutOfRangeException("Invalid coordinates provided, latitude must be from -90 to 90 and longitude from -180 to 180.");
         }
     }
 
@@ -32,17 +32,17 @@ public class ValidationService
             return false;
         }
 
-        int sum = 0;
-        int[] weights = { 7, 6, 5, 4, 3, 2 };
+        var sum = 0;
+        int[] weights = [7, 6, 5, 4, 3, 2];
 
-        for (int i = 0; i < 6; i++)
+        for (var i = 0; i < 6; i++)
         {
-            int digit = imoNumber[i + 3] - '0';
+            var digit = imoNumber[i + 3] - '0';
             sum += digit * weights[i];
         }
 
-        int checkDigit = sum % 10;
-        int actualCheckDigit = imoNumber[imoNumber.Length - 1] - '0';
+        var checkDigit = sum;
+        var actualCheckDigit = imoNumber[9] - '0';
 
         return checkDigit == actualCheckDigit;
     }

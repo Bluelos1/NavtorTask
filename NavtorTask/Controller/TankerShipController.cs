@@ -8,11 +8,11 @@ namespace NavtorTask.Controller;
 [ApiController]
 public class TankerShipController : ControllerBase
 {
-    private readonly ITankerShipService _tankerShip;
+    private readonly ITankerShipService _tankerShipService;
 
-    public TankerShipController(ITankerShipService tankerShip)
+    public TankerShipController(ITankerShipService tankerShipService)
     {
-        _tankerShip = tankerShip;
+        _tankerShipService = tankerShipService;
     }
     
     [HttpPut("{imoNumber}/tanks/{tankId}/refuel")]
@@ -20,7 +20,7 @@ public class TankerShipController : ControllerBase
     {
         try
         {
-            _tankerShip.RefuelTank(imoNumber, tankId, fuelType, liters);
+            _tankerShipService.RefuelTank(imoNumber, tankId, fuelType, liters);
             return NoContent(); 
         }
         catch (Exception ex)
@@ -34,7 +34,7 @@ public class TankerShipController : ControllerBase
     {
         try
         {
-            _tankerShip.EmptyTank(imoNumber, tankId);
+            _tankerShipService.EmptyTank(imoNumber, tankId);
             return NoContent(); 
         }
         catch (Exception ex)

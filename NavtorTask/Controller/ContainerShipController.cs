@@ -8,11 +8,11 @@ namespace NavtorTask.Controller;
 [ApiController]
 public class ContainerShipController : ControllerBase
 {
-    private readonly IContainerShipService _containerShip;
+    private readonly IContainerShipService _containerShipService;
 
     public ContainerShipController(IContainerShipService containerShip)
     {
-        _containerShip = containerShip;
+        _containerShipService = containerShip;
     }
     
     [HttpPost("{imoNumber}/containers")]
@@ -20,7 +20,7 @@ public class ContainerShipController : ControllerBase
     {
         try
         {
-            _containerShip.LoadContainer(imoNumber, container);
+            _containerShipService.LoadContainer(imoNumber, container);
             return NoContent();
         }
         catch (Exception ex)
@@ -34,7 +34,7 @@ public class ContainerShipController : ControllerBase
     {
         try
         {
-            _containerShip.UnloadContainer(imoNumber, containerId);
+            _containerShipService.UnloadContainer(imoNumber, containerId);
             return NoContent();
         }
         catch (Exception ex)
